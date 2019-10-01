@@ -36,12 +36,9 @@ EXERCICIO
    int lista[4] = {100,102,105,990}
    a=pega_indice(lista,2) //a variavel a tem o numero 105
 */
-
-
 int pega_indice(int lista [], int indice) {
    return lista[indice];
 }
-
 
 /*
 EXERCICIO
@@ -56,13 +53,11 @@ EXERCICIO
 */
 
 int busca_linear(int lista[], int numero_a_procurar, int tam_lista) {
-    int aux = 0;
-    for(int i = 0 ; i<tam_lista ; i++){
-        if(lista[i] == numero_a_procurar){
+    for (int i = 0; i < tam_lista; i++) {
+        if (lista[i] == numero_a_procurar)
             return i;
-        }
     }
-    return 0;
+    return false;
 }
 
 
@@ -101,7 +96,7 @@ arredondada para baixo
 */
 
 int media_arredondada(int nro1, int nro2) {
-    return (nro1+nro2)/2;//altere
+    return (nro1+nro2)/2;
 }
 
 
@@ -145,7 +140,7 @@ O número da lista que está nesse indice é o 406.
 
 */
 int numero_do_meio(int lista [],int comeco,int fim) {
-    return lista[(comeco+fim)/2];
+    return 12;//altere
 }
 
 
@@ -228,14 +223,14 @@ typedef struct bb_ans tripla;
 tripla passo_da_busca_binaria(int lista [],int procurando,int menor_i,int maior_i){
    tripla resp;
    resp.menor = menor_i; resp.maior = maior_i;
-   int meio_i = (menor_i+maior_i)/2;
-   int nro_meio = lista[meio_i];
-   if(nro_meio > procurando) {
-       resp.maior = meio_i-1;
-    }
-   if(nro_meio < procurando) {
-       resp.menor = meio_i+1;
-   }
+   int meio_i;
+   int nro_meio;
+   meio_i = (menor_i+maior_i)/2;
+   nro_meio = lista[meio_i];
+   if (nro_meio > procurando)
+         resp.maior = meio_i-1;//vai pra esquerda
+   if (nro_meio < procurando)
+         resp.menor = meio_i+1;//vai pra direita
    return resp;
 }
 
@@ -273,7 +268,11 @@ Crie uma funcao tam_do_intervalo(inicio,fim) que
 conta quantos números ainda temos "sob suspeita" */
 
 int tam_do_intervalo(int inicio,int fim){
-    return fim-inicio+1 < 0 ? 0 : fim-inicio+1;
+    int a;
+    a = fim - inicio + 1;
+    if (a<0)
+        a=0;
+    return a;
 }
 
 /*
@@ -300,18 +299,18 @@ E, quando ela já tem certeza que o número não está na lista
 */
 
 tripla passo_melhor_da_busca_binaria(int lista [],int procurando,int menor_i, int maior_i) {
-   tripla resp;
-   resp.menor = menor_i; resp.maior = maior_i;
-   int meio_i;
-   int nro_meio;
-   meio_i = (menor_i+maior_i)/2;
-   nro_meio = lista[meio_i];
-   if(nro_meio > procurando) {
-       resp.maior = meio_i-1;
-    }
-   if(nro_meio < procurando) {
-       resp.maior = meio_i+1;
-   }
+   tripla resp; resp.menor = menor_i; resp.maior = maior_i;
+   int meio_i; int nro_meio;
+   meio_i = (menor_i+maior_i)/2; nro_meio = lista[meio_i];
+   int tam = tam_do_intervalo(menor_i,maior_i);
+   if (tam == 0 || (tam == 1 && nro_meio != procurando))
+         resp.resp_final = false;
+   if (nro_meio == procurando)
+        resp.resp_final = true;
+   if (nro_meio > procurando)
+         resp.maior = meio_i-1;//vai pra esquerda
+   if (nro_meio < procurando)
+         resp.menor = meio_i+1;//vai pra direita
    return resp;
 }
 
@@ -327,8 +326,22 @@ Implementamos a ideia descrita acima da seguinte forma:
     Se nao for, e o meio for maior, entao podemos pegar um novo fim: meio-1
     Se nao for, e o meio for menor, entao podemos pegar um novo comeco
 */
-bool busca_binaria(int lista [] , int procurado, int tam_lista){
-    return false;
+bool busca_binaria(int lista [] , int procurando, int tam_lista){
+ int nro_meio; int meio_i; int tam;
+ int menor_i = 0; int maior_i = tam_lista-1;
+ while (true) {
+   tam = tam_do_intervalo(menor_i,maior_i);
+   meio_i = (maior_i+menor_i)/2; nro_meio = lista[meio_i];
+   if (tam == 0)// || (tam == 1 && nro_meio != procurando))
+         return false;
+   else if (nro_meio == procurando)
+        return  true;
+   else if (nro_meio > procurando)
+         maior_i = meio_i-1;//vai pra esquerda
+   else if (nro_meio < procurando)
+         menor_i = meio_i+1;//vai pra direita
+
+ }
 }
 
 
@@ -370,6 +383,7 @@ void test_004_busca_linear(){
         assert(numero_do_meio(lista,0,5) == 315);
     }
 
+
 void test_015_passo_da_busca_binaria() {
         int lista1[100] = {10, 20, 30, 40, 90, 110, 400, 900, 1000, 5000, 10000, 15000};
         tripla resposta;
@@ -383,6 +397,7 @@ void test_015_passo_da_busca_binaria() {
         assert(resposta.menor == 0);
         assert(resposta.maior == 2);
 }
+    
 
     void test_020_tam_do_intervalo() {
         assert(tam_do_intervalo(1,2) == 2);
@@ -427,6 +442,8 @@ void test_015_passo_da_busca_binaria() {
         assert(resposta.resp_final == false);
     }
 
+    
+    
     void test_024_busca_funciona() {
         int lista1[10] = {0,1,2,3,4};
         assert(busca_binaria(lista1,2,5) ==  true);
@@ -454,8 +471,7 @@ int main() {
    test_004_busca_linear();
    printf("passou %d testes!\n",testes++);
    test_010_media_arredondada();
-   printf("passou %d testes!\n",testes++);
-   test_011_numero_do_meio();
+
    printf("passou %d testes!\n",testes++);
    test_015_passo_da_busca_binaria();
    printf("passou %d testes!\n",testes++);
