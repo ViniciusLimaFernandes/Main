@@ -74,14 +74,14 @@
 
    EXERCICIO: se eu quiser procurar 40 na arvore, que numeros visitarei?
    */
-   int busca40[10]={};
+   int busca40[10]={20,30};
 
    /*
    E se eu quiser buscar o 15? E o 3? E o 5?
    */
-   int busca15[10]={};
-   int busca3[10]={};
-   int busca5[10]={};
+   int busca15[10]={20,10};
+   int busca3[10]={20,10,8};
+   int busca5[10]={20,10,8};
 
    /*
    Uma outra questao importante eh a insercao.
@@ -114,10 +114,10 @@
    /*
    Faca o mesmo para as duas listas abaixo
    */
-   int numeros2 [10] = {19,21,33,7};;
-   char letras2 [10] =  {};
+   int numeros2 [10] = {19,21,33,7};
+   char letras2 [10] =  {'C','D','E','A'};
    int numeros3 [10] = {9,11,7,50};
-   char letras3 [10] =  {};
+   char letras3 [10] =  {'B','C','A','E'};
 
    /*
    Para representar arvores em C, usamos duas structs.
@@ -181,11 +181,14 @@ arvore* constroi_arvore_no_braco () {
    */
 arvore*  constroi_sua_arvore() {
    arvore* a = cria_arvore();
-   a->raiz = cria_noh(100);//TODO deletar daqui ao comment
+   noh *aux;
+   aux = a-> raiz;
+   
+   a->raiz = cria_noh(100);
    a->raiz->esquerda = cria_noh(30);
-   a->raiz->esquerda->direita = cria_noh(40);
+   aux -> esquerda -> direita = cria_noh(40);
    a->raiz->direita = cria_noh(110);
-   //continue a criacao
+   
    return a;
 }
 
@@ -198,7 +201,7 @@ arvore*  constroi_sua_arvore() {
    */
 
 int raiz(arvore* a) {
-   return 12;
+   return a->raiz->conteudo;
 }
 
    /*
@@ -211,7 +214,7 @@ int raiz(arvore* a) {
    */
 
 int noh_esquerdo(arvore* a) {
-   return 12;
+   return a->raiz->esquerda->conteudo;
 }   
 
    /*
@@ -224,7 +227,12 @@ int noh_esquerdo(arvore* a) {
 
    */
 int tudo_a_esquerda(arvore* a) {
-   return 12;
+   noh *aux;
+   aux = a->raiz;
+   while(aux->esquerda != NULL){
+      aux = aux -> esquerda;
+   }
+   return aux->conteudo;
 }
 
    /*
