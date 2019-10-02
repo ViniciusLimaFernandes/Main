@@ -1,1 +1,49 @@
-{"filter":false,"title":"Poc.java","tooltip":"/Poc.java","undoManager":{"mark":34,"position":34,"stack":[[{"start":{"row":0,"column":0},"end":{"row":49,"column":0},"action":"insert","lines":["//a simple program to demonstrate the use of stream in java ","import java.util.*; ","import java.util.stream.*; ","","class Demo ","{ ","public static void main(String args[]) ","{ ","","\t// create a list of integers ","\tList<Integer> number = Arrays.asList(2,3,4,5); ","","\t// demonstration of map method ","\tList<Integer> square = number.stream().map(x -> x*x). ","\t\t\t\t\t\tcollect(Collectors.toList()); ","\tSystem.out.println(square); ","","\t// create a list of String ","\tList<String> names = ","\t\t\t\tArrays.asList(\"Reflection\",\"Collection\",\"Stream\"); ","","\t// demonstration of filter method ","\tList<String> result = names.stream().filter(s->s.startsWith(\"S\")). ","\t\t\t\t\t\tcollect(Collectors.toList()); ","\tSystem.out.println(result); ","","\t// demonstration of sorted method ","\tList<String> show = ","\t\t\tnames.stream().sorted().collect(Collectors.toList()); ","\tSystem.out.println(show); ","","\t// create a list of integers ","\tList<Integer> numbers = Arrays.asList(2,3,4,5,2); ","","\t// collect method returns a set ","\tSet<Integer> squareSet = ","\t\tnumbers.stream().map(x->x*x).collect(Collectors.toSet()); ","\tSystem.out.println(squareSet); ","","\t// demonstration of forEach method ","\tnumber.stream().map(x->x*x).forEach(y->System.out.println(y)); ","","\t// demonstration of reduce method ","\tint even = ","\tnumber.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i); ","","\tSystem.out.println(even); ","} ","} ",""],"id":1}],[{"start":{"row":4,"column":6},"end":{"row":4,"column":10},"action":"remove","lines":["Demo"],"id":2},{"start":{"row":4,"column":6},"end":{"row":4,"column":7},"action":"insert","lines":["P"]},{"start":{"row":4,"column":7},"end":{"row":4,"column":8},"action":"insert","lines":["O"]},{"start":{"row":4,"column":8},"end":{"row":4,"column":9},"action":"insert","lines":["C"]}],[{"start":{"row":4,"column":8},"end":{"row":4,"column":9},"action":"remove","lines":["C"],"id":3},{"start":{"row":4,"column":7},"end":{"row":4,"column":8},"action":"remove","lines":["O"]}],[{"start":{"row":4,"column":7},"end":{"row":4,"column":8},"action":"insert","lines":["o"],"id":4},{"start":{"row":4,"column":8},"end":{"row":4,"column":9},"action":"insert","lines":["c"]}],[{"start":{"row":18,"column":22},"end":{"row":19,"column":0},"action":"remove","lines":["",""],"id":5}],[{"start":{"row":18,"column":22},"end":{"row":18,"column":26},"action":"remove","lines":["\t\t\t\t"],"id":6}],[{"start":{"row":26,"column":21},"end":{"row":27,"column":3},"action":"remove","lines":["","\t\t\t"],"id":7}],[{"start":{"row":33,"column":26},"end":{"row":34,"column":2},"action":"remove","lines":["","\t\t"],"id":8}],[{"start":{"row":6,"column":0},"end":{"row":6,"column":4},"action":"insert","lines":["    "],"id":9}],[{"start":{"row":7,"column":0},"end":{"row":7,"column":4},"action":"insert","lines":["    "],"id":10}],[{"start":{"row":9,"column":1},"end":{"row":9,"column":5},"action":"insert","lines":["    "],"id":11}],[{"start":{"row":10,"column":1},"end":{"row":10,"column":5},"action":"insert","lines":["    "],"id":12}],[{"start":{"row":12,"column":1},"end":{"row":12,"column":5},"action":"insert","lines":["    "],"id":13}],[{"start":{"row":13,"column":1},"end":{"row":13,"column":5},"action":"insert","lines":["    "],"id":14}],[{"start":{"row":15,"column":1},"end":{"row":15,"column":5},"action":"insert","lines":["    "],"id":15}],[{"start":{"row":17,"column":1},"end":{"row":17,"column":5},"action":"insert","lines":["    "],"id":17}],[{"start":{"row":18,"column":1},"end":{"row":18,"column":5},"action":"insert","lines":["    "],"id":18}],[{"start":{"row":20,"column":1},"end":{"row":20,"column":5},"action":"insert","lines":["    "],"id":19}],[{"start":{"row":21,"column":1},"end":{"row":21,"column":5},"action":"insert","lines":["    "],"id":20}],[{"start":{"row":23,"column":1},"end":{"row":23,"column":5},"action":"insert","lines":["    "],"id":21}],[{"start":{"row":25,"column":1},"end":{"row":25,"column":5},"action":"insert","lines":["    "],"id":22}],[{"start":{"row":26,"column":1},"end":{"row":26,"column":5},"action":"insert","lines":["    "],"id":23}],[{"start":{"row":27,"column":1},"end":{"row":27,"column":5},"action":"insert","lines":["    "],"id":24}],[{"start":{"row":29,"column":1},"end":{"row":29,"column":5},"action":"insert","lines":["    "],"id":25}],[{"start":{"row":30,"column":1},"end":{"row":30,"column":5},"action":"insert","lines":["    "],"id":26}],[{"start":{"row":32,"column":1},"end":{"row":32,"column":5},"action":"insert","lines":["    "],"id":27}],[{"start":{"row":33,"column":1},"end":{"row":33,"column":5},"action":"insert","lines":["    "],"id":28}],[{"start":{"row":34,"column":1},"end":{"row":34,"column":5},"action":"insert","lines":["    "],"id":29}],[{"start":{"row":36,"column":1},"end":{"row":36,"column":5},"action":"insert","lines":["    "],"id":30}],[{"start":{"row":37,"column":1},"end":{"row":37,"column":5},"action":"insert","lines":["    "],"id":31}],[{"start":{"row":39,"column":1},"end":{"row":39,"column":5},"action":"insert","lines":["    "],"id":32}],[{"start":{"row":40,"column":1},"end":{"row":40,"column":5},"action":"insert","lines":["    "],"id":33}],[{"start":{"row":41,"column":1},"end":{"row":41,"column":5},"action":"insert","lines":["    "],"id":34}],[{"start":{"row":43,"column":1},"end":{"row":43,"column":5},"action":"insert","lines":["    "],"id":35}],[{"start":{"row":44,"column":0},"end":{"row":44,"column":4},"action":"insert","lines":["    "],"id":36}]]},"ace":{"folds":[],"scrolltop":0,"scrollleft":0,"selection":{"start":{"row":16,"column":0},"end":{"row":16,"column":0},"isBackwards":false},"options":{"guessTabSize":true,"useWrapMode":false,"wrapToView":true},"firstLineState":0},"timestamp":1570021900663,"hash":"69c3f658aca9e9ffb4a9601cf12cb373d43af141"}
+//a simple program to demonstrate the use of stream in java 
+import java.util.*; 
+import java.util.stream.*; 
+
+class Poc 
+{ 
+    public static void main(String args[]) 
+    { 
+
+    	// create a list of integers 
+	    List<Integer> number = Arrays.asList(2,3,4,5); 
+
+    	// demonstration of map method 
+	    List<Integer> square = number.stream().map(x -> x*x). 
+						collect(Collectors.toList()); 
+    	System.out.println(square); 
+
+	    // create a list of String 
+	    List<String> names = 
+				Arrays.asList("Reflection","Collection","Stream"); 
+
+    	// demonstration of filter method 
+	    List<String> result = names.stream().filter(s->s.startsWith("S")). 
+						collect(Collectors.toList()); 
+	    System.out.println(result); 
+
+	    // demonstration of sorted method 
+	    List<String> show = 
+		    	names.stream().sorted().collect(Collectors.toList()); 
+	    System.out.println(show); 
+
+	    // create a list of integers 
+	    List<Integer> numbers = Arrays.asList(2,3,4,5,2); 
+
+	    // collect method returns a set 
+	    Set<Integer> squareSet = 
+		    numbers.stream().map(x->x*x).collect(Collectors.toSet()); 
+	    System.out.println(squareSet); 
+
+	    // demonstration of forEach method 
+	    number.stream().map(x->x*x).forEach(y->System.out.println(y)); 
+
+	    // demonstration of reduce method 
+	    int even = 
+	    number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i); 
+
+	    System.out.println(even); 
+    } 
+} 
