@@ -1,4 +1,3 @@
-//a simple program to demonstrate the use of stream in java 
 import java.util.*; 
 import java.util.stream.*; 
 
