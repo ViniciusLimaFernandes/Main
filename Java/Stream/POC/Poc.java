@@ -7,27 +7,23 @@ class Poc
     { 
 
     	// create a list of integers 
-	    List<Integer> number = Arrays.asList(2,3,4,5); 
+	    List<Integer> number = Arrays.asList(2,3,4,5);  
 
     	// demonstration of map method 
-	    List<Integer> square = number.stream().map(x -> x*x). 
-						collect(Collectors.toList()); 
+    	List<Integer> square = number.stream().map(x -> x*x).collect(Collectors.toList());
     	System.out.println(square); 
 
 	    // create a list of String 
-	    List<String> names = 
-				Arrays.asList("Reflection","Collection","Stream"); 
+	    List<String> names = Arrays.asList("Reflection","Collection","Stream"); 
 
     	// demonstration of filter method 
-	    List<String> result = names.stream().filter(s->s.startsWith("S")). 
-						collect(Collectors.toList()); 
+        List<String> result = names.stream().filter(s -> s.startsWith("C")).collect(Collectors.toList());  
 	    System.out.println(result); 
 
 	    // demonstration of sorted method 
-	    List<String> show = 
-		    	names.stream().sorted().collect(Collectors.toList()); 
+	    List<String> show = names.stream().sorted().collect(Collectors.toList()); 
 	    System.out.println(show); 
-
+         
 	    // create a list of integers 
 	    List<Integer> numbers = Arrays.asList(2,3,4,5,2); 
 
