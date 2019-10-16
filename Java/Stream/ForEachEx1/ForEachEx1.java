@@ -10,7 +10,7 @@ class ForEachEx1{
         
         // myList = myList.stream().map(n -> n*2).collect(Collectors.toList());
         myList.stream().sorted(Comparator.reverseOrder()).forEach(num -> System.out.println(String.format("message:%s" , num+1)));
-
+        
         
     }
 }
