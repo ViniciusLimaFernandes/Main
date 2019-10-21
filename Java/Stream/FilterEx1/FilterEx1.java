@@ -7,7 +7,7 @@ class FilterEx1{
         List<String> myList = Arrays.asList("Alface","Tomate","Cebola");
         
         myList = myList.stream().filter(palavra -> palavra.startsWith("A")).collect(Collectors.toList());
-        
+
         System.out.println(myList);
     }   
 }
