@@ -6,9 +6,8 @@ public class main{
         
         CalculaFrete frete = new CalculaFrete();
         
-        double entregaCasa = frete.calculaFrete(TipoFrete.COMUM,15.75);
+        frete.printEntrega(TipoFrete.COMUM,Estados.SAO_PAULO);
         
-        System.out.println(entregaCasa);
     }
     
 }

@@ -5,7 +5,9 @@ public class CalculaFrete implements FreteInterface{
     FreteComum comum = new FreteComum();
     FreteExpresso expresso = new FreteExpresso();
     
-    public double calculaFrete(TipoFrete tipo, double distancia){
+    public double calculaFrete(TipoFrete tipo, Estados estado){
+        
+        double distancia = estado.getDistance();
 
         switch(tipo.toString()){
             case "comum":
@@ -15,5 +17,11 @@ public class CalculaFrete implements FreteInterface{
         }
         
         return 0;
+    }
+    
+    void printEntrega(TipoFrete tipo, Estados estado){
+        double frete = calculaFrete(tipo,estado);
+        System.out.println("Objeto de São Paulo MATRIZ para " + estado.getDescription());
+        System.out.println("Valor do frete = " + frete);
     }
 }
