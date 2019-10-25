@@ -340,7 +340,6 @@ bool busca_binaria(int lista [] , int procurando, int tam_lista){
          maior_i = meio_i-1;//vai pra esquerda
    else if (nro_meio < procurando)
          menor_i = meio_i+1;//vai pra direita
-
  }
 }
 
