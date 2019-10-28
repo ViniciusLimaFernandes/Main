@@ -74,14 +74,14 @@
 
    EXERCICIO: se eu quiser procurar 40 na arvore, que numeros visitarei?
    */
-   int busca40[10]={20,30};
+   int busca40[10]={10,20,30};
 
    /*
    E se eu quiser buscar o 15? E o 3? E o 5?
    */
-   int busca15[10]={20,10};
-   int busca3[10]={20,10,8};
-   int busca5[10]={20,10,8};
+   int busca15[10]={10,20,12};
+   int busca3[10]={10,5,2};
+   int busca5[10]={10,5};
 
    /*
    Uma outra questao importante eh a insercao.
@@ -181,13 +181,15 @@ arvore* constroi_arvore_no_braco () {
    */
 arvore*  constroi_sua_arvore() {
    arvore* a = cria_arvore();
-   noh *aux;
-   aux = a-> raiz;
    
    a->raiz = cria_noh(100);
    a->raiz->esquerda = cria_noh(30);
-   aux -> esquerda -> direita = cria_noh(40);
    a->raiz->direita = cria_noh(110);
+   
+   noh *aux;
+   aux = a-> raiz;
+   aux = aux -> esquerda;
+   aux -> direita = cria_noh(40);
    
    return a;
 }
@@ -243,7 +245,19 @@ int tudo_a_esquerda(arvore* a) {
    */
 
 bool busca(arvore* a, int procurado) {
-   return false;
+   noh *aux;
+   aux = a->raiz;
+
+   while (aux != NULL && aux->conteudo != procurado) {
+       if (aux->conteudo > procurado) 
+         aux = aux->esquerda;
+       else
+         aux = aux->direita;
+    }
+   
+   if (aux == NULL) return false;
+   return aux->conteudo == procurado;
+   
 }
 
    /*
@@ -274,6 +288,10 @@ e a direita do 12)
 */
 
 void insere(arvore* a,int elemento) {
+   
+   if(*a == NULL) cria_noh(elemento);
+
+   if(a->conteudo < elemento) insere(a->raiz->direita, elemento);
 }
 
 /*
