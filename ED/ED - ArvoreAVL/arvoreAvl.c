@@ -250,7 +250,7 @@ arvore* gera_arvore(int tamanho, int* elementos) {
    for(int i=0; i<tamanho; i++) {
       insere(a,elementos[i]);
    }
-   return a;
+   return a ;
 
 }
 
