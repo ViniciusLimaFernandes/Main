@@ -1,6 +1,5 @@
 # Welcome to my main repository!
 ![GitHub repo status](https://img.shields.io/badge/GitHub-PRO-orange)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ViniciusLimaFernandes/Main) 
 ![Maintenance](https://img.shields.io/maintenance/yes/2019?style=plastic) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ViniciusLimaFernandes/Main?style=plastic)
 
