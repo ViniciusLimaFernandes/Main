@@ -1,6 +1,6 @@
 # Welcome to my main repository!
 ![GitHub repo status](https://img.shields.io/badge/GitHub-PRO-orange)
-![GitHub linkedIn](https://img.shields.io/badge/Linkedin-ViniciusLimaFernandes-blueviolet)(https://br.linkedin.com/in/viniciuslimafernandes)
+[![GitHub linkedIn](https://img.shields.io/badge/Linkedin-ViniciusLimaFernandes-blueviolet)](https://br.linkedin.com/in/viniciuslimafernandes)
 ![Maintenance](https://img.shields.io/maintenance/yes/2019?style=plastic) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ViniciusLimaFernandes/Main?style=plastic)
 
