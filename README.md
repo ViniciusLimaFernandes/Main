@@ -4,6 +4,7 @@
 ![Maintenance](https://img.shields.io/maintenance/yes/2019?style=plastic) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ViniciusLimaFernandes/Main?style=plastic)
 
+<img src = "https://cdn3.iconfinder.com/data/icons/social-network-and-media-1/512/Github.png" height="150" width="150">
 Here u will find some of my projects.
 
 “Programs must be written for people to read, and only incidentally for machines to execute.” -Harold
