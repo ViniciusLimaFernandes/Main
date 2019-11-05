@@ -120,6 +120,7 @@ bool existe_aresta(int arestas[6][6],int num_vertices,int v1,int v2){
 */
 
 bool existe_aresta(int arestas[6][6],int num_vertices,int v1,int v2){
+   if(arestas[v1][v2] == 1) return true;
    return false;
 }
 
@@ -132,9 +133,11 @@ void adiciona_aresta(int arestas[6][6], int num_vertices, int v1, int v2) {
 
 }*/
 void adiciona_aresta(int arestas[6][6], int num_vertices, int v1, int v2) {
+   arestas[v1][v2] = 1;
 }
 /* faca o mesmo, agora para remover arestas, em uma funcao remove_aresta */
 void remove_aresta(int arestas[6][6], int num_vertices, int v1, int v2) {
+   arestas[v1][v2] = 0;
 }
 
 /* faca uma funcao conta_arestas, que conta o numero de arestas
@@ -143,7 +146,14 @@ void remove_aresta(int arestas[6][6], int num_vertices, int v1, int v2) {
  int conta_arestas(int arestas[6][6], int num_vertices) {
  */
 int conta_arestas(int arestas[6][6], int num_vertices) {
-   return 12;
+   int total = 0;
+   for(int i = 0; i<num_vertices; i++){
+      for(int j = i; j< num_vertices;j++){
+         if(arestas[i][j] == 1) total ++;
+      }
+   }
+   
+   return total;
 }
 
 /* direi que um grafo eh uma "estrela", ou ainda um "asterisco"
@@ -164,6 +174,18 @@ int conta_arestas(int arestas[6][6], int num_vertices) {
  * */
 
 bool eh_estrela(int arestas[6][6],int num_vertices) {
+   bool i_eh_central;
+   if (conta_arestas(arestas,num_vertices) > num_vertices-1)
+       return false;
+   for(int i = 0; i < num_vertices; i++) {
+      i_eh_central = true;
+      for(int j = 0; j < num_vertices; j++)
+         if (arestas[i][j] == 0 && i != j)
+            i_eh_central = false;
+      if (i_eh_central)
+         return true;
+
+   }
    return false;
    
 }
